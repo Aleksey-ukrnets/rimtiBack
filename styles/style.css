@@ -41,6 +41,7 @@ body {
 .content {
     padding: 77px 0 50px;
     margin: 0 0 0 269px;
+    z-index: 2;
 }
 
 .logo  svg {
@@ -296,6 +297,7 @@ body {
 
 .intro-vector {
     position: absolute;
+    pointer-events: none;
 }
 
 .intro-vector__line {
@@ -635,6 +637,10 @@ body {
         min-height: 720px;
     }
 
+    .intro-eight {
+        right: 865px;
+    }
+
 }
 
 @media (max-width: 1300px) {
@@ -667,6 +673,98 @@ body {
 
     .girl-img {
         right: 24px;
+    }
+
+    .intro-one__img {
+        width: 151px;
+        height: 195px;
+    }
+
+    .intro-one {
+        right: 600px;
+    }
+
+    .intro-one .intro-vector__line-one {
+        display: none;
+    }
+
+    .intro-vector__line {
+        width: 9px;
+        height: 131px;
+    }
+
+    .intro-one .intro-vector__line-two {
+        left: 85px;
+        top: -90px;
+    }
+
+    .intro-two__img {
+        width: 255px;
+        height: 329px;
+    }
+
+    .intro-two {
+        right: 281px;
+    }
+
+    .intro-three__img {
+        width: 106px;
+        height: 137px;
+    }
+
+    .intro-three {
+        right: 186px;
+    }
+
+    .intro-three .intro-vector__line-one {
+        left: -70px;
+        top: -128px;
+    }
+
+    .intro-four__img {
+        width: 444px;
+        height: 572px;
+        filter: blur(35px);
+    }
+
+    .intro-five__img {
+        width: 497px;
+        height: 641px;
+    }
+
+    .intro-five {
+        left: -397px
+    }
+
+    .intro-seven {
+        right: 469px;
+    }
+
+    .intro-eight {
+        right: 414px;
+        top: -100%;
+    }
+
+    .blur-effect__one {
+        background: #0F3457;
+        filter: blur(466px);
+        width: 1568px;
+        height: 1568px;
+        display: block;
+        left: -529px;
+        top: calc(100% - 400px);
+        position: absolute;
+        z-index: -2;
+    }
+
+    .blur-effect__two {
+        filter: blur(291px);
+        width: 912px;
+        height: 912px;
+        top: calc(100% - 71px);
+        left: -200px;
+        position: absolute;
+        z-index: -1;
     }
 
 }
@@ -787,6 +885,59 @@ body {
         bottom: 0;
         background: linear-gradient(180deg, rgba(2, 17, 33, 0) 0%, #021121 50.52%);
         z-index: 2;
+    }
+
+    .intro-one {
+        top: 818px;
+        right: initial;
+        left: -23px;
+    }
+
+    .intro-one__img {
+        width: 137px;
+        height: 177px;
+    }
+
+    .intro-two__img {
+        width: 231px;
+        height: 298px;
+    }
+
+    .intro-two {
+        top: 737px;
+        right: -82px;
+    }
+
+    .intro-three {
+        top: 579px;
+        left: 23px;
+        right: initial;
+    }
+
+    .intro-four, .intro-five, .intro-six, .intro-seven, .intro-eight {
+        display: none;
+    }
+
+    .blur-effect__one {
+        background: #0F3457;
+        filter: blur(466px);
+        width: 687px;
+        height: 687px;
+        display: block;
+        left: -428px;
+        top: 278px;
+        position: absolute;
+        z-index: -2;
+    }
+
+    .blur-effect__two {
+        filter: blur(291px);
+        width: 399px;
+        height: 399px;
+        top: 421px;
+        left: -284px;
+        position: absolute;
+        z-index: -1;
     }
 
 }
