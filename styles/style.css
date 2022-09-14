@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+input {
+    appearance: none;
+    outline: none;
+}
+
+body {
+    background-color: #021121;
+    font-family: 'Roboto Flex', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 100vh;
+    min-height: 1000px;
+}
+
+.wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    padding: 200px 0 30px;
+    margin-left: 269px;
+}
+
+.logo  svg {
+    width: 612px;
+    height: 283px;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 110%;
+    color: #fff;
+    margin: 20px 0 127px;
+    user-select: none;
+    max-width: 672px;
+}
+
+.title span {
+    color: #FF59E3;
+}
+
+.subscribe__title {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 110%;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 22px;
+    user-select: none;
+}
+
+.subscribe__title span {
+    color: #C6FF23;
+}
+
+.subscribe__vector {
+    position: absolute;
+    right: -63px;
+    top: -86px;
+}
+
+.subscribe__wrap {
+    display: flex;
+}
+
+.subscribe__wrap input {
+    background: #0B304B;
+    width: 321px;
+    height: 52px;
+    padding: 18px 22px;
+    border: 1px solid #0B304B;
+    user-select: none;
+}
+
+.subscribe__wrap input::placeholder {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 89.8%;
+    color: #C4FF1C;
+}
+
+.btn {
+    width: 226px;
+    height: 52px;
+    background-color: #C6FF23;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 89.8%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #021121;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn.disabled {
+    pointer-events: none;
+}
+
+.socials {
+    position: relative;
+}
+
+.socials__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    width: 280px;
+    margin-top: 89px;
+}
+
+.socials__list::before {
+    content: '';
+    width: 280px;
+    height: 54px;
+    box-shadow: 0 0 15px #ffffff, 0 0 40px #ffffff;
+    transform: rotate(-2deg) translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    z-index: -1;
+    background-color: #fff;
+}
+
+.socials__list-vector-one {
+    position: absolute;
+    width: 5px;
+    height: 36px;
+    background: #fff;
+    border-radius: 21px;
+    display: block;
+    left: 129px;
+    top: 29px;
+}
+
+.socials__list-vector-two {
+    position: absolute;
+    width: 4px;
+    height: 69px;
+    background: #fff;
+    border-radius: 21px;
+    display: block;
+    z-index: -1;
+    right: 56px;
+    top: 21px;
+}
+
+.socials__item {
+    z-index: 1;
+}
+
+.socials__item a {
+    display: flex;
+    align-items: center;
+}
+
+._discord path, ._linkin path, ._telegram path, ._twitter path, ._medium path {
+    transition: all 0.5s ease-in-out;
+}
+
+._discord {
+    margin-top: 5px;
+}
+
+._discord:hover path {
+    fill: #5C6DFF;
+}
+
+._linkin:hover path {
+    fill: #0077B5;
+}
+
+._telegram:hover path {
+    fill: #0071FE;
+}
+
+._twitter:hover path {
+    fill: #1C96E9;
+}
+
+._medium:hover path {
+    fill: #FFC017;
+}
+
+.socials__bg {
+    position: absolute;
+    left: -35px;
+    top: -68px;
+    width: 344px;
+    height: 193px;
+}
+
+.girl-img {
+    position: absolute;
+    right: 47px;
+    top: 110px;
+    width: 813px;
+    height: 1893px;
+    pointer-events: none;
+}
+
+.blur-effect__one {
+    background: #0F3457;
+    filter: blur(678px);
+    width: 2282px;
+    height: 2282px;
+    display: block;
+    left: -823px;
+    top: calc(100% - 660px);
+    position: absolute;
+    z-index: -2;
+}
+
+.blur-effect__two {
+    background: #00FFF0;
+    filter: blur(424px);
+    width: 1327px;
+    height: 1327px;
+    display: block;
+    top: calc(100% - 182px);
+    left: -345px;
+    position: absolute;
+    z-index: -1;
+}
