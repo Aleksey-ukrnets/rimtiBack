@@ -421,7 +421,7 @@ body {
 
 .intro-seven {
     right: 1000px;
-    top: -300px;
+    top: -100%;
     transition: all .5s ease-in-out;
     animation: vector1 linear infinite;
     animation-duration: 28s;
