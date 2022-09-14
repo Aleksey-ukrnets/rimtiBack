@@ -412,6 +412,34 @@ body {
     opacity: 0;
 }
 
+.intro-seven__img {
+    width: 240px;
+    height: 309px;
+}
+
+.intro-seven {
+    right: 1000px;
+    top: -300px;
+    transition: all .5s ease-in-out;
+    animation: vector1 linear infinite;
+    animation-duration: 28s;
+    animation-delay: 13s;
+}
+
+.intro-eight__img {
+    width: 163px;
+    height: 210px;
+    filter: blur(5px);
+}
+
+.intro-eight {
+    right: 640px;
+    top: -50%;
+    animation: vector4 50s linear infinite;
+    animation-delay: 7s;
+    opacity: 0;
+}
+
 
 @media (min-width: 769px) {
     @keyframes vector1 {
