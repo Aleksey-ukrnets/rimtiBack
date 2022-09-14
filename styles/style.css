@@ -85,7 +85,9 @@ body {
 }
 
 .subscribe__wrap {
+    position: relative;
     display: flex;
+    z-index: 33;
 }
 
 .subscribe__wrap input {
@@ -186,7 +188,7 @@ body {
 }
 
 ._discord path, ._linkin path, ._telegram path, ._twitter path, ._medium path {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 ._discord {
@@ -252,4 +254,98 @@ body {
     left: -345px;
     position: absolute;
     z-index: -1;
+}
+
+.intro-vector {
+    position: absolute;
+}
+
+.intro-vector__line {
+    width: 14px;
+    height: 200px;
+    position: absolute;
+    transform: rotate(-25deg);
+    background: linear-gradient(182.84deg, rgba(255, 30, 150, 0) 50.83%, #FF1E96 132.44%);
+    left: 0;
+    top: 0;
+}
+
+.intro-one__img {
+    width: 240px;
+    height: 309px;
+}
+
+.intro-one {
+    right: 1000px;
+    top: -300px;
+    animation: tr 6s infinite;
+}
+
+.intro-two__img {
+    width: 391px;
+    height: 503px;
+}
+
+.intro-two {
+    right: -91px;
+    top: 310px;
+}
+
+.intro-three__img {
+    width: 163px;
+    height: 210px;
+}
+
+.intro-three {
+    right: 120px;
+    top: -23px;
+}
+
+.intro-four__img {
+    width: 680px;
+    height: 876px;
+    filter: blur(35px);
+}
+
+.intro-four {
+    right: 40px;
+    top: 580px;
+}
+
+.intro-five__img {
+    width: 760px;
+    height: 981px;
+    filter: blur(35px);
+    mix-blend-mode: normal;
+}
+
+.intro-five {
+    left: -231px;
+    top: 330px;
+}
+
+@keyframes tr {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.5;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(110%);
+        right: 0;
+        top: 100%;
+        opacity: 0;
+    }
 }
