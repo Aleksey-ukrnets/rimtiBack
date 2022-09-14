@@ -17,8 +17,8 @@
     <article class="intro">
         <div class="container">
             <div class="intro-vector intro-one">
-                <div class="intro-vector__line intro-vector__line--pink"></div>
-                <div class="intro-vector__line intro-vector__line--pink"></div>
+                <div class="intro-vector__line intro-vector__line--pink intro-vector__line-one"></div>
+                <div class="intro-vector__line intro-vector__line--pink intro-vector__line-two"></div>
                 <picture>
                     <source srcset="images/vector-pink-1.webp" type="image/webp" class="intro-one__img">
                     <img src="images/vector-pink-1.png" alt="" class="intro-one__img" />
@@ -31,6 +31,7 @@
                 </picture>
             </div>
             <div class="intro-vector intro-three">
+                <div class="intro-vector__line intro-vector__line--blue intro-vector__line-one"></div>
                 <picture>
                     <source srcset="images/vector-blue-1.webp" type="image/webp" class="intro-three__img">
                     <img src="images/vector-blue-1.png" alt="" class="intro-three__img" />
@@ -48,8 +49,14 @@
                     <img src="images/vector-blue-2.png" alt="" class="intro-five__img" />
                 </picture>
             </div>
-<!--            <div class="blur-effect__one"></div>-->
-<!--            <div class="blur-effect__two"></div>-->
+            <div class="intro-vector intro-six">
+                <picture>
+                    <source srcset="images/vector-pink-1.webp" type="image/webp" class="intro-six__img">
+                    <img src="images/vector-pink-1.png" alt="" class="intro-six__img" />
+                </picture>
+            </div>
+            <div class="blur-effect__one"></div>
+            <div class="blur-effect__two"></div>
             <div class="content">
                 <div class="logo">
                     <svg width="613" height="283" viewBox="0 0 613 283" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,8 +248,9 @@
                     </div>
 
                     <div class="subscribe__wrap">
-                        <input type="text" placeholder="E-mail">
-                        <button class="btn disabled">join waitlist</button>
+                        <input type="email" placeholder="E-mail" id="email">
+                        <span class="subscribe__checking"></span>
+                        <button class="btn">join waitlist</button>
                     </div>
                 </form>
 
@@ -295,9 +303,9 @@
                     </ul>
                 </div>
             </div>
-            <picture>
-                <source srcset="images/girl.webp" type="image/webp" class="girl-img">
-                <img src="images/girl.png" alt="" class="girl-img" />
+            <picture class="girl-img">
+                <source srcset="images/girl.webp" type="image/webp" >
+                <img src="images/girl.png" alt="" />
             </picture>
         </div>
     </article>
