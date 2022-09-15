@@ -904,6 +904,7 @@ body {
         height: 618px;
         display: block;
         margin: 0 0 62px auto;
+        z-index: 1;
     }
 
     .intro {
@@ -1045,6 +1046,8 @@ body {
         position: absolute;
         z-index: -1;
     }
+
+
 
 }
 
