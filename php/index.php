@@ -324,13 +324,6 @@
                         </li>
                         <li class="socials__item">
                             <a href="#">
-                                <svg class="_telegram" width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5218 24.0356C21.8926 24.3087 22.3706 24.377 22.7967 24.2093C23.2228 24.0404 23.536 23.6619 23.6304 23.2032C24.6312 18.3117 27.0589 5.93067 27.9698 1.48109C28.0389 1.14572 27.9238 0.797183 27.6704 0.573206C27.417 0.34923 27.0658 0.284552 26.7525 0.405523C21.9237 2.26441 7.05258 8.06743 0.974226 10.4066C0.588427 10.5551 0.337369 10.9408 0.350037 11.3636C0.363857 11.7876 0.637947 12.1553 1.03296 12.2787C3.75889 13.1267 7.33704 14.3064 7.33704 14.3064C7.33704 14.3064 9.00922 19.5585 9.88101 22.2294C9.99042 22.5648 10.2426 22.8283 10.5755 22.9193C10.9071 23.0092 11.2618 22.9145 11.5094 22.6714C12.9098 21.2964 15.0749 19.1704 15.0749 19.1704C15.0749 19.1704 19.1886 22.3073 21.5218 24.0356ZM8.84223 13.6429L10.7758 20.2759L11.2054 16.0755C11.2054 16.0755 18.6761 9.06754 22.9349 5.07309C23.0592 4.95572 23.0765 4.75929 22.9729 4.62155C22.8704 4.48381 22.6815 4.45147 22.5398 4.54489C17.6039 7.82309 8.84223 13.6429 8.84223 13.6429Z" fill="#021121"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="socials__item">
-                            <a href="#">
                                 <svg class="_twitter" width="28" height="23" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M27.8492 3.44709C26.8395 3.88513 25.7573 4.17925 24.6195 4.31275C25.7807 3.63273 26.673 2.55639 27.0914 1.27563C26.007 1.9035 24.801 2.36032 23.5224 2.60645C22.4977 1.53846 21.0377 0.873047 19.4218 0.873047C16.3181 0.873047 13.8014 3.33027 13.8014 6.36322C13.8014 6.79292 13.8527 7.21219 13.9487 7.61477C9.27825 7.38532 5.13928 5.19927 2.36645 1.87638C1.8819 2.68989 1.60654 3.63273 1.60654 4.63815C1.60654 6.54261 2.59699 8.22387 4.10614 9.21051C3.184 9.18131 2.31736 8.93308 1.55958 8.52215C1.55958 8.5451 1.55958 8.56805 1.55958 8.59099C1.55958 11.2526 3.49778 13.47 6.06569 13.9769C5.59608 14.102 5.09873 14.1688 4.58642 14.1688C4.22354 14.1688 3.87134 14.1354 3.52767 14.0686C4.24489 16.2484 6.31971 17.84 8.77662 17.8838C6.85549 19.3565 4.43273 20.2326 1.79865 20.2326C1.34399 20.2326 0.897857 20.2075 0.460266 20.1554C2.94493 21.7157 5.8992 22.623 9.07333 22.623C19.409 22.623 25.0614 14.2564 25.0614 7.00151C25.0614 6.76372 25.055 6.52383 25.0464 6.29021C26.1436 5.51633 27.0956 4.54846 27.8492 3.44709Z" fill="#021121"/>
                                 </svg>
@@ -353,7 +346,66 @@
         </div>
     </article>
 </main>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    const form = document.querySelector('.subscribe');
+    const email = document.querySelector('#email');
+    const text = document.querySelector('.subscribe__checking');
+    const button = document.querySelector('.btn');
 
-<script src="js/app.js"></script>
+    const validateEmail = (email) => {
+        const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return regex.test(String(email).toLowerCase());
+    }
+
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (validateEmail(email.value)) {
+            form.classList.add('valid');
+            form.classList.remove('invalid');
+
+            const settings = {
+                "url": "./save_data.php",
+                "method": "POST",
+                "timeout": 0,
+                "data": {
+                    "email": email.value
+                },
+            };
+
+            $.ajax(settings).done(function (response) {
+                text.innerHTML = 'Success! You’re on the waitlist!';
+                text.style.color = "#C6FF23";
+                email.style.border = "border: 1px solid #0B304B"
+                email.value = '';
+            });
+        } else {
+            form.classList.remove('valid');
+            form.classList.add('invalid');
+            text.innerHTML = 'Check your email address';
+            text.style.color = "#FF5977";
+            button.classList.add('disabled')
+
+            email.addEventListener('input', () => {
+                if (validateEmail(email.value)) {
+                    form.classList.add('valid');
+                    form.classList.remove('invalid');
+                    email.style.border = "1px solid #C6FF23"
+                    text.innerHTML = '';
+                    text.style.color = "#C6FF23";
+                    button.classList.remove('disabled')
+                } else {
+                    form.classList.remove('valid');
+                    form.classList.add('invalid');
+                    email.style.border = "1px solid #FF5977"
+                    text.innerHTML = 'Check your email address';
+                    text.style.color = "#FF5977";
+                    button.classList.add('disabled')
+                }
+            })
+        }
+    })
+</script>
 </body>
 </html>

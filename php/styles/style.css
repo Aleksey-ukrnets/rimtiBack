@@ -173,13 +173,13 @@ body {
     justify-content: center;
     gap: 20px;
     position: relative;
-    width: 310px;
+    width: 290px;
     margin-top: 89px;
 }
 
 .socials__list::before {
     content: '';
-    width: 310px;
+    width: 290px;
     height: 54px;
     box-shadow: 0 0 15px #ffffff, 0 0 40px #ffffff;
     transform: rotate(-2deg) translate(-50%, -50%);
