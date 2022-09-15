@@ -15,8 +15,10 @@
 
 <main>
     <article class="intro">
-        <video autoplay muted loop class="intro__bg-mobile" preload="auto">
+        <video autoplay muted loop playsinline class="intro__bg-mobile" preload="auto" poster="./video/moble_bg.gif">
             <source src="./video/moble_bg.mp4" type="video/mp4">
+            <source src="./video/moble_bg.ogv" type="video/ogv">
+            <source src="./video/moble_bg.webm" type="video/webm">
         </video>
         <div class="container">
             <div class="intro-vector intro-one">
