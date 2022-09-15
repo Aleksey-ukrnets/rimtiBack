@@ -15,6 +15,9 @@
 
 <main>
     <article class="intro">
+        <video autoplay muted loop class="intro__bg-mobile" preload="auto">
+            <source src="./video/moble_bg.mp4" type="video/mp4">
+        </video>
         <div class="container">
             <div class="intro-vector intro-one">
                 <div class="intro-vector__line intro-vector__line--pink intro-vector__line-one"></div>
