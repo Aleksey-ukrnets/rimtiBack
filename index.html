@@ -15,10 +15,10 @@
 
 <main>
     <article class="intro">
-        <video autoplay muted loop playsinline class="intro__bg-mobile" preload="auto" poster="./video/moble_bg.gif">
-            <source src="./video/moble_bg.mp4" type="video/mp4">
-            <source src="./video/moble_bg.ogv" type="video/ogv">
-            <source src="./video/moble_bg.webm" type="video/webm">
+        <video autoplay muted loop playsinline class="intro__bg-mobile" preload="auto" poster="videooble_bg.gif">
+            <source src="videooble_bg.mp4" type="video/mp4">
+            <source src="videooble_bg.ogv" type="video/ogv">
+            <source src="videooble_bg.webm" type="video/webm">
         </video>
         <div class="container">
             <div class="intro-vector intro-one">
@@ -354,7 +354,7 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script>
     const form = document.querySelector('.subscribe');
-    const email = document.querySelector('#email');
+    const emailInput = document.querySelector('#email');
     const text = document.querySelector('.subscribe__checking');
     const button = document.querySelector('.btn');
 
@@ -363,28 +363,37 @@
         return regex.test(String(email).toLowerCase());
     }
 
+
     button.addEventListener('click', (e) => {
         e.preventDefault();
 
-        if (validateEmail(email.value)) {
+        if (validateEmail(emailInput.value)) {
             form.classList.add('valid');
             form.classList.remove('invalid');
 
-            const settings = {
-                "url": "./save_data.php",
-                "method": "POST",
-                "timeout": 0,
-                "data": {
-                    "email": email.value
-                },
-            };
 
-            $.ajax(settings).done(function (response) {
-                text.innerHTML = 'Success! You’re on the waitlist!';
-                text.style.color = "#C6FF23";
-                email.style.border = "border: 1px solid #0B304B"
-                email.value = '';
-            });
+            const email = emailInput.value;
+
+            async function registerUser() {
+                const headers = new Headers();
+                headers.append('Content-Type', 'application/json');
+
+                const options = {
+                    method: 'POST',
+                    headers,
+                    body: JSON.stringify({email}),
+                };
+
+                const response = await fetch('/.netlify/functions/index', options);
+
+            }
+
+            registerUser()
+
+            text.innerHTML = 'Success! You’re on the waitlist!';
+            text.style.color = "#C6FF23";
+            emailInput.style.border = "border: 1px solid #0B304B"
+            emailInput.value = '';
         } else {
             form.classList.remove('valid');
             form.classList.add('invalid');
@@ -392,18 +401,18 @@
             text.style.color = "#FF5977";
             button.classList.add('disabled')
 
-            email.addEventListener('input', () => {
-                if (validateEmail(email.value)) {
+            emailInput.addEventListener('input', () => {
+                if (validateEmail(emailInput.value)) {
                     form.classList.add('valid');
                     form.classList.remove('invalid');
-                    email.style.border = "1px solid #C6FF23"
+                    emailInput.style.border = "1px solid #C6FF23"
                     text.innerHTML = '';
                     text.style.color = "#C6FF23";
                     button.classList.remove('disabled')
                 } else {
                     form.classList.remove('valid');
                     form.classList.add('invalid');
-                    email.style.border = "1px solid #FF5977"
+                    emailInput.style.border = "1px solid #FF5977"
                     text.innerHTML = 'Check your email address';
                     text.style.color = "#FF5977";
                     button.classList.add('disabled')
