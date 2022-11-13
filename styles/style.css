@@ -35,8 +35,8 @@ body {
     position: relative;
 }
 
-.intro__bg-mobile {
-    display: none;
+.intro__bg-mobile,
+.intro__bg {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -46,7 +46,14 @@ body {
     -o-object-fit: cover;
     object-fit: cover;
     width: 100vw;
-    height: 100%;;
+    height: 100%;
+}
+
+.intro__bg-mobile,
+.small,
+.medium,
+.normal {
+    display: none;
 }
 
 .intro > .container {
@@ -268,17 +275,20 @@ body {
     position: relative;
     width: 290px;
     margin-top: 89px;
+    -webkit-transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    transform: rotate(-4deg);
 }
 
 .socials__list::before {
     content: '';
-    width: 290px;
+    width: 300px;
     height: 54px;
     -webkit-box-shadow: 0 0 15px #ffffff, 0 0 40px #ffffff;
     box-shadow: 0 0 15px #ffffff, 0 0 40px #ffffff;
-    -webkit-transform: rotate(-2deg) translate(-50%, -50%);
-    -ms-transform: rotate(-2deg) translate(-50%, -50%);
-    transform: rotate(-2deg) translate(-50%, -50%);
+    -webkit-transform: rotate(-1deg) translate(-50%, -50%);
+    -ms-transform: rotate(-1deg) translate(-50%, -50%);
+    transform: rotate(-1deg) translate(-50%, -50%);
     position: absolute;
     left: 50%;
     top: 8px;
@@ -322,7 +332,13 @@ body {
     align-items: center;
 }
 
-._discord path, ._linkin path, ._telegram path, ._twitter path, ._medium path {
+._discord path,
+._linkin path,
+._telegram path,
+._twitter path,
+._tiktok path,
+._youtube path,
+._medium path {
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -346,6 +362,14 @@ body {
 
 ._twitter:hover path {
     fill: #1C96E9;
+}
+
+._youtube:hover path {
+    fill: rgb(255, 0, 0);
+}
+
+._tiktok:hover path {
+    fill: #0071FE;
 }
 
 ._medium:hover path {
@@ -1043,6 +1067,33 @@ body {
 }
 /* ADAPTIVE */
 
+@media (max-width: 1440px) {
+    .large {
+        display: none;
+    }
+    .normal {
+        display: block;
+    }
+}
+
+@media (max-width: 1280px) {
+    .normal {
+        display: none;
+    }
+    .medium {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .medium {
+        display: none;
+    }
+    .small {
+        display: block;
+    }
+}
+
 @media (max-width: 1780px) {
     .content {
         margin: 0 0 0 150px;
@@ -1274,6 +1325,10 @@ body {
 
     body {
         background: transparent;
+    }
+
+    .small {
+        display: none;
     }
 
     .intro__bg-mobile {
