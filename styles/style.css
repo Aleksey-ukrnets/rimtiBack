@@ -1708,6 +1708,7 @@ body {
     }
     .btn {
         height: 35px;
+        padding-left: 33px;
     }
 }
 @media (max-width: 360px){
