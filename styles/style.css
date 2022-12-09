@@ -1448,10 +1448,10 @@ body {
     height: 55px;
     padding: 18px 22px;
     border: 1px solid #0B304B;
-    -webkit-user-select: none;
+    /* -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+    user-select: none; */
     color: #fff;
     font-weight: 500;
     font-size: 18px;
