@@ -130,13 +130,8 @@ body {
     z-index: 33;
     flex-direction: column;
     gap: 20px;
-    
+    z-index: 100000;
 }
-
-
-
-
-
 
 .girl-img {
     position: absolute;
