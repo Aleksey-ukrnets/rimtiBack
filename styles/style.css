@@ -1252,7 +1252,7 @@ body {
     background-image: url('../images/site-stub-1_1920x1080.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 .logoImg {
     display: none;
