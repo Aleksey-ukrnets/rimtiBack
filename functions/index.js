@@ -27,6 +27,28 @@ async function addEmail(email) {
     });
 }
 
+async function senWaitlistThanksEmail(email) {
+
+    await fetch(
+        `${process.env.URL}/.netlify/functions/emails/waitlist_thanks`,
+        {
+            headers: {
+                "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+            },
+            method: "POST",
+            body: JSON.stringify({
+                from: "ritmi@ritmi.app",
+                to: email,
+                subject: "Thank you for joining Ritmi waitlist",
+                parameters: {
+                    "MessageStream": "ritmi-waitlist-thanks"
+                },
+            }),
+        }
+    );
+
+}
+
 const validateEmail = (email) => {
     const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(String(email).toLowerCase());
@@ -56,5 +78,6 @@ module.exports.handler = async function (event, context) {
     }
     // store email in notion
     await addEmail(email);
+    await senWaitlistThanksEmail(email);
     return { statusCode: 200, body: 'ok' };
 };
