@@ -1,0 +1,21 @@
+body {
+    background-color: #06141d;
+    color: white;
+
+}
+.wrapper {
+    padding: 0 50px;
+}
+.under{
+    text-decoration: underline;
+}
+h1,h2,h3,h4,h5,p {
+    font-family: 'Codec Pro',sans-serif;
+}
+.privacy {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(45deg,#fff,#ffcd95 40%,#764204);
+    -webkit-background-clip: text;
+    font-family: 'Dela Gothic One,cursive';
+    font-size: 50px;
+}
