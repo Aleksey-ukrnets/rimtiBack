@@ -1725,17 +1725,17 @@ body {
 .nextPage{
     text-decoration: none;
     color: white;
-    opacity: 0.4;
+    opacity: 0.8 ;
     font-size: 14px;
     text-align: center;
     position: relative;
-    top: 20px;
+    top: 40px;
     text-transform: capitalize;
     width: 100%;
     display: block;
     transition: 0.3s all;
 }
 .nextPage:hover {
-    opacity: 0.8;
+    opacity: 1;
     transform: scale(1.1);
 }
