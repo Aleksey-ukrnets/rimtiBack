@@ -5,7 +5,6 @@ const { NOTION_API_TOKEN, NOTION_DATABASE_ID } = process.env;
 async function addEmail(email) {
     // Initialize Notion client
     const notion = new Client({
-        
         auth: NOTION_API_TOKEN,
         logLevel: LogLevel.DEBUG,
     });

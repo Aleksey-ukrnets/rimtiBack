@@ -35,6 +35,11 @@ async function senWaitlistThanksEmail(email) {
         {
             headers: {
                 "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+                // "Access-Control-Allow-Origin": "https://ritmi.app"
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "*",
+                
+
             },
             method: "POST",
             body: JSON.stringify({
